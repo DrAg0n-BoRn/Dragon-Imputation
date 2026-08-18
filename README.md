@@ -34,6 +34,6 @@ imputed_df = mice_impute(df, 5)
 ## Arguments
 
 `mice_impute()` function takes the following arguments:
-- `pydf`: A Polars DataFrame containing missing values.
+- `df`: A Polars DataFrame containing missing values.
 - `max_iterations`: The maximum number of iterations for the MICE algorithm (default is 10).
 - `max_depth`: The maximum depth for the decision tree model used in imputation (default is None for no depth limit).

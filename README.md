@@ -1,4 +1,4 @@
-# Polars Imputation Plugin
+# Dragon Imputation
 
 A Polars plugin for performing imputation on missing values in DataFrames.
 

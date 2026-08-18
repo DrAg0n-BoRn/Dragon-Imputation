@@ -26,5 +26,5 @@ dependencies = [
 [tool.uv]
 cache-keys = [{file = "pyproject.toml"}, {file = "rust/Cargo.toml"}, {file = "**/*.rs"}]
 
-# [project.urls]
-# Homepage = "https://github.com/jane-doe/polars_impute_plugin"
+[project.urls]
+Homepage = "https://github.com/DrAg0n-BoRn/Dragon-Imputation"

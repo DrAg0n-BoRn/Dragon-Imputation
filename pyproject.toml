@@ -1,0 +1,30 @@
+[build-system]
+requires = ["maturin>=1.14,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "dragon-imputation"
+description = "A robust imputation plugin for Python Polars DataFrames backed by Rust."
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Karl Luigi Loza Vidaurre", email = "luigiloza@gmail.com" }
+]
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dynamic = ["version"]
+dependencies = [
+    "polars>=1.8.2",
+]
+
+[tool.uv]
+cache-keys = [{file = "pyproject.toml"}, {file = "rust/Cargo.toml"}, {file = "**/*.rs"}]
+
+# [project.urls]
+# Homepage = "https://github.com/jane-doe/polars_impute_plugin"

@@ -526,11 +526,12 @@ dependencies = [
 
 [[package]]
 name = "dragon-imputation"
-version = "0.1.2"
+version = "0.2.0"
 dependencies = [
  "polars",
  "pyo3",
  "pyo3-polars",
+ "rayon",
  "serde",
  "smartcore",
 ]

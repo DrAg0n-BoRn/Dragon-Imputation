@@ -79,7 +79,7 @@ pub fn core_mice_impute(
             \n\t- Max iterations={}, \
             \n\t- Max depth={}, \
             \n\t- Seed={}, \
-            \n\t- CPU cores={}\n",
+            \n\t- CPU cores={}",
             cat_display,
             max_iterations, 
             depth_display,
@@ -160,6 +160,9 @@ pub fn core_mice_impute(
 
     // Run the computationally heavy loop inside the thread pool
     pool.install(|| -> PyResult<()> {
+        if verbose >= 3 {
+            println!("\n🐲 Starting MICE iterations...");
+        }
         // 2. Chained Equations Loop
         for iteration in 0..max_iterations {
 
@@ -268,6 +271,11 @@ pub fn core_mice_impute(
 
     let final_df = DataFrame::new(n_rows, final_columns)
         .map_err(|e| pyo3::exceptions::PyValueError::new_err(e.to_string()))?;
+
+    //report success
+    if verbose >= 2 {
+        println!("\n🐲 MICE imputation completed successfully.");
+    }
 
     Ok(PyDataFrame(final_df))
 }
